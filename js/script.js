@@ -4,7 +4,12 @@ window.addEventListener('DOMContentLoaded', () => {
 
 	const modal = document.querySelector('.modal_container'),
 		btnOpen = document.querySelector('[data-open]'),
-		btnClose = document.querySelector('[data-close]');
+		btnClose = document.querySelector('[data-close]'),
+		inputs = document.querySelectorAll('.input');
+
+	function deleteTextFromInputs() {
+		inputs.forEach(item => item.value = '');
+	}
 
 	function showDarkBG() {
 		if (modal.style.display === 'block') {
@@ -34,10 +39,12 @@ window.addEventListener('DOMContentLoaded', () => {
 
 		if (e.target === btnClose) {
 			closeModal();
+			deleteTextFromInputs();
 		}
 
 		if (e.target === document.body) {
 			closeModal();
+			deleteTextFromInputs();
 		}
 
 		showDarkBG();
@@ -48,6 +55,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
 		if (e.code === 'Escape' && modal.style.display == 'block') {
 			closeModal();
+			deleteTextFromInputs();
 		}
 
 		showDarkBG();
