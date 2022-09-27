@@ -9,7 +9,7 @@ window.addEventListener('DOMContentLoaded', () => {
 	function showDarkBG() {
 		if (modal.style.display === 'block') {
 			document.body.style.cssText = 'background-color: lightgray;';
-			btnOpen.style.cssText = 'background-color: lightgray;';
+			btnOpen.style.cssText = 'background-color: lightgray; opacity: 0.5';
 		} else {
 			document.body.style.cssText = 'background-color: white;';
 			btnOpen.style.cssText = 'background-color: white;';
